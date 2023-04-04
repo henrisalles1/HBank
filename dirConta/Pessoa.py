@@ -1,14 +1,16 @@
 from dirConta.Documentos.Doc import Doc
+from Nome import Nome
+from Telefone import Telefone
 
 
 class Pessoa:
     def __init__(self, primeiro_nome: str, sobrenome: str, documento: str, telefone: str):
-        self.primeiro_nome = primeiro_nome.title()
-        self.sobrenome = sobrenome.title()
+        self.primeiro_nome = Nome(primeiro_nome)
+        self.sobrenome = Nome(sobrenome)
         self.Doc = Doc(documento)
         self.cpf = self.Doc.cpf
         self.cnpj = self.Doc.cnpj
-        self.telefone = telefone
+        self.telefone = Telefone(telefone)
 
     def adiciona_cnpj(self, cnpj):
         self.Doc.adiciona_cnpj(cnpj)
@@ -26,11 +28,6 @@ class Pessoa:
         self.Doc.troca_cpf(cpf)
         self.cpf = self.Doc.cpf
 
-    def print_Doc(self):
-        return self.Doc
+    def troca_telefone(self, telefone):
+        self.telefone = Telefone(telefone)
 
-
-pessoa = Pessoa('Henrique', 'Salles', "881.067.538-08", "(48)99140-1331")
-pessoa.adiciona_cnpj("34.871.427/0001-87")
-
-print(pessoa.Doc)
