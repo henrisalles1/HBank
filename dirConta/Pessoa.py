@@ -1,16 +1,19 @@
 from dirConta.Documentos.Doc import Doc
-from Nome import Nome
-from Telefone import Telefone
+from dirConta.Nome import Nome
+from dirConta.Telefone import Telefone
+from dirConta.Idade import Idade
 
 
 class Pessoa:
-    def __init__(self, primeiro_nome: str, sobrenome: str, documento: str, telefone: str):
+    def __init__(self, primeiro_nome: str, sobrenome: str, documento: str, telefone: str, data_nascimento: str):
         self.primeiro_nome = Nome(primeiro_nome)
         self.sobrenome = Nome(sobrenome)
         self.Doc = Doc(documento)
         self.cpf = self.Doc.cpf
         self.cnpj = self.Doc.cnpj
         self.telefone = Telefone(telefone)
+        self.data_nascimento = data_nascimento
+        self.idade = Idade(data_nascimento).idade
 
     def adiciona_cnpj(self, cnpj):
         self.Doc.adiciona_cnpj(cnpj)
@@ -31,3 +34,5 @@ class Pessoa:
     def troca_telefone(self, telefone):
         self.telefone = Telefone(telefone)
 
+    def pega_idade(self):
+        self.idade = Idade(self.data_nascimento)

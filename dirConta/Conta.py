@@ -17,15 +17,22 @@ class Conta:
         self.__limite = Conta.limite
         self.limite_atual = self.limite
         self.__saldo = 0
+        self.__pode_criar_conta_p_idade()
 
     def __str__(self):
         return f'Nome: {self.__Nome_completo}\n' \
                f'{self._documento}\n' \
                f'Telefone: {self.telefone_preferivel}\n'
 
+    def __pode_criar_conta_p_idade(self):
+        if self.__Pessoa.idade >= 18:
+            pass
+        else:
+            raise ValueError('A pessoa é menor de 18 anos')
+
     def saque(self, valor):
         self.digite_sua_senha()
-        if self.verifica_pode_retirar(valor):
+        if self.__verifica_pode_retirar(valor):
             self.ajuste_saldolimite(valor)
             print(f'Efetuado o saque no valor de {valor}')
 
@@ -34,7 +41,7 @@ class Conta:
 
     def transferencia(self, destino, valor):
         self.digite_sua_senha()
-        if self.verifica_pode_retirar(valor):
+        if self.__verifica_pode_retirar(valor):
             self.ajuste_saldolimite(valor)
             destino.deposito(valor)
             print(f'Efetuado a transferencia no valor de {valor}')
@@ -48,15 +55,15 @@ class Conta:
 
     def digite_sua_senha(self):
         senha = str(input('Digite sua senha: '))
-        self.valida_senha(senha)
+        self.__valida_senha(senha)
 
-    def valida_senha(self, senha):
+    def __valida_senha(self, senha):
         if senha == str(self.__senha):
             pass
         else:
             raise ValueError('Senha Inválida!')
 
-    def verifica_pode_retirar(self, valor):
+    def __verifica_pode_retirar(self, valor):
         if valor <= self.__saldo + self.limite_atual:
             return True
         else:
@@ -68,6 +75,6 @@ class Conta:
               f'Limite Mensal: {self.limite}')
 
 
-pessoa = Pessoa('Henrique', 'Salles', '079.495.743-99', '(48)99140-1331')
+pessoa = Pessoa('Henrique', 'Salles', '079.495.743-99', '(48)99140-1331', '16/10/2004')
 conta = Conta(pessoa, '(45)88945-1420', '491513')
 print(conta)
