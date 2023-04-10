@@ -5,6 +5,10 @@ class Cpf:
     def __str__(self):
         return f"{self.cpf[0:3]}.{self.cpf[3:6]}.{self.cpf[6:9]}-{self.cpf[9:]}"
 
+    def __eq__(self, outro):
+        return self.cpf == outro.cpf
+
+
     def valida_cpf(self):
         if self.valida_p_soma():
             if self.valida_primeiro_digito():

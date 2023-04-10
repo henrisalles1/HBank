@@ -1,9 +1,12 @@
 class Cnpj:
     def __init__(self, cnpj):
-        self.cnpj = cnpj
+        self.cnpj = str(cnpj)
 
     def __str__(self):
         return f'{self.cnpj[:2]}.{self.cnpj[2:5]}.{self.cnpj[5:8]}/{self.cnpj[8:12]}-{self.cnpj[12:]}'
+
+    def __eq__(self, outro):
+        return self.cnpj == outro.cnpj
 
     def valida_cnpj(self):
         if self.verifica_primeiro_digito():

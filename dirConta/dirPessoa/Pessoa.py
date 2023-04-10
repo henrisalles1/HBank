@@ -4,6 +4,7 @@ from dirConta.dirPessoa.Telefone import Telefone
 from dirConta.dirPessoa.Idade import Idade
 
 
+
 class Pessoa:
     def __init__(self, primeiro_nome: str, sobrenome: str, documento: str, telefone: str, data_nascimento: str):
         self.primeiro_nome = Nome(primeiro_nome)
@@ -36,4 +37,7 @@ class Pessoa:
 
     def pega_idade(self):
         self.idade = Idade(self.data_nascimento)
+
+
+pessoa = Pessoa('Teste', 'Teste', '07949574399', '+55(48)99140-1331', '16/10/2005')
 
