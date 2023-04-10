@@ -1,7 +1,7 @@
-from dirConta.Documentos.Doc import Doc
-from dirConta.Nome import Nome
-from dirConta.Telefone import Telefone
-from dirConta.Idade import Idade
+from dirConta.dirPessoa.dirDocumentos.Doc import Doc
+from dirConta.dirPessoa.Nome import Nome
+from dirConta.dirPessoa.Telefone import Telefone
+from dirConta.dirPessoa.Idade import Idade
 
 
 class Pessoa:
@@ -36,3 +36,4 @@ class Pessoa:
 
     def pega_idade(self):
         self.idade = Idade(self.data_nascimento)
+

@@ -1,6 +1,6 @@
-from dirConta.Pessoa import Pessoa
-from dirConta.Senha import Senha
-from dirConta.Telefone import Telefone
+from dirConta.dirPessoa.Pessoa import Pessoa
+
+
 # from dirConta.Conta import Conta
 
 class ContaComercial:

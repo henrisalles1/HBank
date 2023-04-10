@@ -1,0 +1,26 @@
+REGRAS DO BANCO :
+
+Criação de Pessoa no sistema:
+- Necessário a entrega de Primeiro nome e Sobrenome para referir-se ao Titular
+- Necessário a entrega de um telefone para contato
+- Necessária a entrega da data de nascimento do individuo
+- Necessário a apresentação de um documento(CPF ou CNPJ) válido
+
+Criação de Conta:
+- Necessário o cadatro de Pessoa no sistema
+- Necessário a entrada de um telefone(podendo ser ou não o mesmo cadastrado em Pessoa)
+- É guardado ambos telefones para contato
+- Necessário a criação de uma senha de 6 digitos(não podendo serem todos iguais)
+- É feita uma verificação da idade do individuo para impedir menores de 18 cirarem contas
+- São puxados de obj Pessoa os atributos Documento, Nome completo, além do telefone cadastrado
+- O numero da conta é equivalente à ordem crescente de quantas contas foram criadas ao longo do tempo
+- Já existe um Limite pré-definido que pode ser alterado
+- Não aceitamos a criação de mais de uma conta no mesmo documento
+
+Regra de Conta:
+- Saldo não vira negativo
+- É criada um valor para divida ao momento de pagamento de credito > saldo da conta
+- Todo o mês em um dia fixo é feita a quitação de crédito dividas e outros
+- O prazo de aumento de divida e pagamento de credito é o mesmo!
+
+

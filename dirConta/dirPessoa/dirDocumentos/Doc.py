@@ -1,5 +1,5 @@
-from dirConta.Documentos.Cpf import Cpf
-from dirConta.Documentos.Cnpj import Cnpj
+from dirConta.dirPessoa.dirDocumentos.Cpf import Cpf
+from dirConta.dirPessoa.dirDocumentos.Cnpj import Cnpj
 import re
 
 

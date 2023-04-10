@@ -44,4 +44,3 @@ class Telefone:
             return True
         else:
             return False
-
